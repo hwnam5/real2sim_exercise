@@ -192,7 +192,7 @@ if __name__ == "__main__":
     original_xml = "humanoid_WSensor.xml"
     modified_xml = "humanoid_WSensor_modified.xml"
     #env = SquatPDOnlyEnv(xml_path)
-    for cycle in range(0, 1000):
+    for cycle in range(0, 3001):
         modified_xml, down_qpos_th = set_random_position(original_xml, modified_xml)
         env = SquatPDOnlyEnv(modified_xml)
         env.run_pd_squat(squat_data = squat_data, down_qpos_th = down_qpos_th)

@@ -70,6 +70,7 @@ class SquatPDOnlyEnv:
         ])
 
     def run_pd_squat(self, down_qpos_th, squat_data:list, up_qpos_th = 1.0, max_frames=200):
+            
             for phase in ["down", "up"]:
                 print(f"Phase {phase}")
                 target = self.squat_qpos if phase == "down" else self.standing_qpos

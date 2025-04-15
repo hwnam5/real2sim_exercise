@@ -176,8 +176,8 @@
   </worldbody>
   <sensor>
     <velocimeter name="velocity" site="imu_site" />
-    <accelerometer name="imu_acc" site="imu_site" />
-    <gyro name="imu_gyro" site="imu_site" />
+    <accelerometer name="imu_acc" site="imu_site" frame="global"/>
+    <gyro name="imu_gyro" site="imu_site" frame="global"/>
     <framepos name="watch_position" objtype="site" objname="imu_site" />
     <framepos name="phone_position" objtype="site" objname="phone_site" />
   </sensor>

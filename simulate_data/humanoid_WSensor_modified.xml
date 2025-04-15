@@ -150,7 +150,7 @@
           <geom name="lower_arm_right" fromto=".01 .01 .01 .17 .17 .17" class="arm_lower" />
           <body name="hand_right" pos=".18 .18 .18">
             <geom name="hand_right" zaxis="1 1 1" class="hand" />       
-            <site name="imu_site" pos="0.040940994610708256 -0.040046095885816806 -0.02099949063986455" size="0.02" rgba="0 1 0 1" />   
+            <site name="imu_site" pos="0.03967615731271258 0.0069063404272335024 0.023694973452187684" size="0.02" rgba="0 1 0 1" />   
           </body>
         </body>
       </body>
@@ -168,7 +168,7 @@
       </body>
     </body>
 
-    <body name="phone" pos="0.9087557640723349 -0.16066220282960053 0.6808911651034321">
+    <body name="phone" pos="0.8764535093063557 -0.512185259043561 0.5449200748862612">
       <geom name="phone" type="box" size="0.05 0.1 0.005" rgba="1 0 0 1" />
       <site name="phone_site" pos="0 0 0.01" size="0.02" type="sphere" rgba="1 0 0 1" />
     </body>
@@ -176,8 +176,8 @@
   </worldbody>
   <sensor>
     <velocimeter name="velocity" site="imu_site" />
-    <accelerometer name="imu_acc" site="imu_site" />
-    <gyro name="imu_gyro" site="imu_site" />
+    <accelerometer name="imu_acc" site="imu_site" frame="global" />
+    <gyro name="imu_gyro" site="imu_site" frame="global" />
     <framepos name="watch_position" objtype="site" objname="imu_site" />
     <framepos name="phone_position" objtype="site" objname="phone_site" />
   </sensor>

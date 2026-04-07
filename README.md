@@ -78,11 +78,17 @@ Content Encoder를 **Frozen**한 상태로, Style Encoder와 Decoder를 가상 �
 
 $$\mathcal{L}_{StyleEncoder} = \mathcal{L}_{recon} + \mathcal{L}_{KLD} + \lambda \cdot \mathcal{L}_{MINE}$$
 
-| 손실 | 설명 | 수식 |
-|------|------|------|
-| Reconstruction Loss | 시뮬레이션 데이터 복원 품질 | $\mathcal{L}_{recon} = \|x^{sim} - \hat{x}^{sim}\|^2$ |
-| KL Divergence Loss | Latent 분포를 정규분포로 정규화 | $\mathcal{L}_{KLD} = D_{KL}(q(z_s \mid x) \Vert \mathcal{N}(0, I))$ |
-| MINE Loss | Content와 Style 간의 상호 정보량 최소화 | $\mathcal{L}_{MINE} = -\left(\mathbb{E}_{p(z_c,z_s)}[f(z_c,z_s)] - \log\mathbb{E}_{p(z_c)p(z_s)}\left[e^{f(z_c,z_s)}\right]\right)$ |
+**Reconstruction Loss** — 시뮬레이션 데이터 복원 품질
+
+$$\mathcal{L}_{recon} = \|x^{sim} - \hat{x}^{sim}\|^2$$
+
+**KL Divergence Loss** — Latent 분포를 정규분포로 정규화
+
+$$\mathcal{L}_{KLD} = D_{KL}(q(z_s \mid x) \Vert \mathcal{N}(0, I))$$
+
+**MINE Loss** — Content와 Style 간의 상호 정보량 최소화
+
+$$\mathcal{L}_{MINE} = -\left(\mathbb{E}_{p(z_c,z_s)}[f(z_c,z_s)] - \log\mathbb{E}_{p(z_c)p(z_s)}\left[e^{f(z_c,z_s)}\right]\right)$$
 
 ### Step 3. Content Encoder 파인 튜닝 (실제 데이터)
 
